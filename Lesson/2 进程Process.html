@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html class="theme theme-white">
+<head>
+<meta charset="utf-8">
+<title>2 进程Process</title>
+<link href="https://www.zybuluo.com/static/assets/template-theme-white.css" rel="stylesheet" media="screen">
+<style type="text/css">
+
+#wmd-preview h1  {
+    color: #0077bb; /* 将标题改为蓝色 */
+}
+#wmd-preview h2  {
+    color: #AAAAFF; /* 将标题改为色 */
+}
+#wmd-preview h1  {
+    color: #0077bb; /* 将标题改为蓝色 */
+}
+#wmd-preview h1  {
+    color: #0077bb; /* 将标题改为蓝色 */
+}
+#wmd-preview h3  {
+    color: #0077bb; /* 将标题改为蓝色 */
+}
+#wmd-preview h4  {
+    color: #0077bb; /* 将标题改为light blue */
+}</style>
+</head>
+<body class="theme theme-white">
+<div id="wmd-preview" class="wmd-preview wmd-preview-full-reader"><div class="md-section-divider"></div><div class="md-section-divider"></div><h1 data-anchor-id="j7fu" id="2-进程process">2 进程Process</h1><p data-anchor-id="2rtb"><code>bash</code></p><hr><div class="md-section-divider"></div><h1 data-anchor-id="4o77" id="进程-process">进程 Process</h1><p data-anchor-id="zv36">Process 就是正在运行中的 Program</p><div class="md-section-divider"></div><h1 data-anchor-id="dbxm" id="bash-进程">bash 进程</h1><p data-anchor-id="kx8e">bash本身就是一个进程，内部有一个bash terminal，类似Rstudio与R Gui。 <br>
+bash会将你的各种命令当作input，把运行的结果（output）输出到屏幕或者其指定的地方，所以bash本身就是一个人与bash进行交互式的进程</p><div class="md-section-divider"></div><h2 data-anchor-id="o7yf" id="内部命令">内部命令</h2><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="94ox"><ol class="linenums"><li class="L0"><code><span class="pln">man bash</span></code></li></ol></pre><p data-anchor-id="384u">![image_1b9oa4mji1fju18mddjt2ne1la113.png-10.8kB][1]</p><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="q18i"><ol class="linenums"><li class="L0"><code><span class="pun">/^</span><span class="pln">\s</span><span class="pun">+[</span><span class="pln">argument</span><span class="pun">]^</span></code></li></ol></pre><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="dlk5"><ol class="linenums"><li class="L0"><code><span class="pln">man bash</span></code></li><li class="L1"><code><span class="pun">/^</span><span class="pln">\s</span><span class="pun">+</span><span class="kwd">exec</span><span class="pln"> </span><span class="com">#\s多个space</span></code></li></ol></pre><p data-anchor-id="hz9w">![image_1b9oa2012sl69jj5nl1peppfs9.png-17.5kB][2]</p><div class="md-section-divider"></div><h2 data-anchor-id="ww32" id="外部命令">外部命令</h2><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="ynyg"><ol class="linenums"><li class="L0"><code><span class="pln">man cat</span></code></li></ol></pre><p data-anchor-id="jt4f">![image_1b9oa3gk8d2219a175s1rhu187om.png-9.7kB][3]</p><div class="md-section-divider"></div><h2 data-anchor-id="20ht" id="fork">fork</h2><p data-anchor-id="h2cz">把原来的环境Clone一遍，开一个新的进程，跑新的代码/语言，并用新的PID表示这个新进程 <br>
+current process 是 bash.exe PID是13100 <br>
+fork vim 即clone bash的环境之后，跑新进程vim.exe，并给个新名字区分bash.exe，PID 13101</p><div class="md-section-divider"></div><h2 data-anchor-id="9z13" id="bash-bash-terminal">bash &amp; bash terminal</h2><table data-anchor-id="be1u" class="table table-striped-white table-bordered">
+<thead>
+<tr>
+ <th>父进程</th>
+ <th>子进程</th>
+</tr>
+</thead>
+<tbody><tr>
+ <td>bash terminal</td>
+ <td>vim</td>
+</tr>
+</tbody></table><div class="md-section-divider"></div><h2 data-anchor-id="imlf" id="process-file">process &amp; file</h2><table data-anchor-id="mdle" class="table table-striped-white table-bordered">
+<thead>
+<tr>
+ <th>进程</th>
+ <th>命令</th>
+ <th>进程流</th>
+</tr>
+</thead>
+<tbody><tr>
+ <td>input</td>
+ <td>&lt;</td>
+ <td>输入</td>
+</tr>
+<tr>
+ <td>output</td>
+ <td>1&gt; or &gt;</td>
+ <td>输出流1</td>
+</tr>
+<tr>
+ <td>error</td>
+ <td>2&gt;</td>
+ <td>输出流2</td>
+</tr>
+</tbody></table><div class="md-section-divider"></div><h2 data-anchor-id="h3z4" id="基本命令">基本命令</h2><table data-anchor-id="6f47" class="table table-striped-white table-bordered">
+<thead>
+<tr>
+ <th>命令</th>
+ <th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+ <td>jobs</td>
+ <td>列出当前program</td>
+</tr>
+<tr>
+ <td>Ctrl+z</td>
+ <td>暂停当前program，进入后台</td>
+</tr>
+<tr>
+ <td>fg %1</td>
+ <td>回到第一个program</td>
+</tr>
+<tr>
+ <td>kill %1</td>
+ <td>terminate program</td>
+</tr>
+</tbody></table><div class="md-section-divider"></div><h2 data-anchor-id="nm7b" id="program-file">program -&gt; file</h2><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="5roa"><ol class="linenums"><li class="L0"><code class="language-bash"><span class="com">#output 1</span></code></li><li class="L1"><code class="language-bash"><span class="pln">echo hi </span><span class="pun">&gt;</span><span class="pln"> a</span><span class="pun">.</span><span class="pln">file</span></code></li><li class="L2"><code class="language-bash"><span class="pln">cat a</span><span class="pun">.</span><span class="pln">file</span></code></li><li class="L3"><code class="language-bash"></code></li><li class="L4"><code class="language-bash"><span class="pln">echo1 hi </span><span class="pun">&gt;</span><span class="pln"> a</span><span class="pun">.</span><span class="pln">file </span><span class="com">#put error output into screen(bash terminal)</span></code></li><li class="L5"><code class="language-bash"><span class="pln">echo1 hi </span><span class="lit">2</span><span class="pun">&gt;</span><span class="pln"> a</span><span class="pun">.</span><span class="pln">file </span><span class="com">#put error output into a.file </span></code></li><li class="L6"><code class="language-bash"><span class="pln">cat a</span><span class="pun">.</span><span class="pln">file </span><span class="com">#show error output in a.file</span></code></li></ol></pre><div class="md-section-divider"></div><h2 data-anchor-id="s5q4" id="program1-program2">program1 -&gt; program2</h2><p data-anchor-id="3ray">the output of <code>echo hi</code> becomes the input of <code>cat</code></p><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="mc3s"><ol class="linenums"><li class="L0"><code class="language-bash"><span class="pln">echo hi </span><span class="pun">|</span><span class="pln"> cat </span></code></li></ol></pre><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="gpq2"><ol class="linenums"><li class="L0"><code class="language-bash"><span class="pln">ps </span><span class="pun">&gt;</span><span class="pln"> a</span><span class="pun">.</span><span class="pln">file</span></code></li><li class="L1"><code class="language-bash"><span class="pln">cat a</span><span class="pun">.</span><span class="pln">file </span><span class="pun">|</span><span class="pln"> grep pty4 </span></code></li><li class="L2"><code class="language-bash"><span class="pln">grep </span><span class="pun">-</span><span class="pln">n pty4 a</span><span class="pun">.</span><span class="pln">file </span><span class="com">#grep [option] [file]</span></code></li></ol></pre><p data-anchor-id="v132">the output of the first program:<code>ps</code> that is supposed to show on the screen becomes the input of the next program:<code>grep pty4</code>, which run exactly the same as #2</p><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="snew"><ol class="linenums"><li class="L0"><code class="language-bash"><span class="pln">ps </span><span class="pun">|</span><span class="pln"> grep pty4</span></code></li><li class="L1"><code class="language-bash"></code></li><li class="L2"><code class="language-bash"><span class="com">#2</span></code></li><li class="L3"><code class="language-bash"><span class="pln">ps </span><span class="pun">&gt;</span><span class="pln"> a</span><span class="pun">.</span><span class="pln">file</span></code></li><li class="L4"><code class="language-bash"><span class="pln">grep pty4 a</span><span class="pun">.</span><span class="pln">file</span></code></li></ol></pre><div class="md-section-divider"></div><h2 data-anchor-id="us6q" id="devnull-空文件">/dev/null 空文件</h2><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="mbak"><ol class="linenums"><li class="L0"><code class="language-shell"><span class="pln">echo1 hi </span><span class="lit">2</span><span class="pun">&gt;</span><span class="pln"> </span><span class="str">/dev/</span><span class="kwd">null</span></code></li><li class="L1"><code class="language-shell"><span class="pln">echo1 hi </span><span class="pun">&gt;</span><span class="pln"> </span><span class="str">/dev/</span><span class="kwd">null</span></code></li></ol></pre><div class="md-section-divider"></div><h2 data-anchor-id="1pbx" id="1-2">#1 || #2</h2><p data-anchor-id="l7zw">1正确就不跑2</p><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="bvdn"><ol class="linenums"><li class="L0"><code class="language-shell"><span class="pln">echo1 hi </span><span class="pun">&gt;</span><span class="pln"> </span><span class="str">/dev/</span><span class="kwd">null</span><span class="pln"> </span><span class="pun">||</span><span class="pln"> echo bi </span></code></li><li class="L1"><code class="language-shell"><span class="com">#bash: echo1: command not found</span></code></li><li class="L2"><code class="language-shell"><span class="com">#bi</span></code></li><li class="L3"><code class="language-shell"></code></li><li class="L4"><code class="language-shell"><span class="pln">echo1 hi </span><span class="lit">2</span><span class="pun">&gt;</span><span class="pln"> </span><span class="str">/hev/</span><span class="kwd">null</span><span class="pln"> </span><span class="pun">||</span><span class="pln"> echo bi</span></code></li><li class="L5"><code class="language-shell"><span class="com">#bi</span></code></li></ol></pre><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="z78b"><ol class="linenums"><li class="L0"><code><span class="pln">echo hi </span><span class="pun">&gt;</span><span class="pln"> </span><span class="str">/dev/</span><span class="kwd">null</span><span class="pln"> </span><span class="pun">||</span><span class="pln"> echo bi </span></code></li><li class="L1"><code><span class="com">#无显示</span></code></li><li class="L2"><code><span class="pln">echo hi </span><span class="lit">2</span><span class="pun">&gt;</span><span class="pln"> </span><span class="str">/dev/</span><span class="kwd">null</span><span class="pln"> </span><span class="pun">||</span><span class="pln"> echo bi </span></code></li><li class="L3"><code><span class="com">#hi</span></code></li></ol></pre><div class="md-section-divider"></div><h2 data-anchor-id="vws6" id="1-2-1">#1 &amp;&amp; #2</h2><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="cyoz"><ol class="linenums"><li class="L0"><code class="language-shell"><span class="pln">echo1 hi </span><span class="pun">&gt;</span><span class="pln"> </span><span class="str">/dev/</span><span class="kwd">null</span><span class="pln"> </span><span class="pun">&amp;&amp;</span><span class="pln"> echo bi </span></code></li><li class="L1"><code class="language-shell"><span class="com">#bash: echo1: command not found</span></code></li><li class="L2"><code class="language-shell"></code></li><li class="L3"><code class="language-shell"><span class="pln">echo1 hi </span><span class="lit">2</span><span class="pun">&gt;</span><span class="pln"> </span><span class="str">/dev/</span><span class="kwd">null</span><span class="pln"> </span><span class="pun">&amp;&amp;</span><span class="pln"> echo bi </span></code></li><li class="L4"><code class="language-shell"><span class="com">#无显示，错误流去了NULL</span></code></li></ol></pre><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="4y8z"><ol class="linenums"><li class="L0"><code><span class="pln"> echo hi </span><span class="lit">2</span><span class="pun">&gt;</span><span class="pln"> </span><span class="str">/dev/</span><span class="kwd">null</span><span class="pln"> </span><span class="pun">&amp;&amp;</span><span class="pln"> echo bi </span><span class="com">#hi bi</span></code></li><li class="L1"><code><span class="pln"> echo hi </span><span class="pun">&gt;</span><span class="pln"> </span><span class="str">/dev/</span><span class="kwd">null</span><span class="pln"> </span><span class="pun">&amp;&amp;</span><span class="pln"> echo bi </span><span class="com">#bi</span></code></li></ol></pre></div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html class="theme theme-white">
+<head>
+<meta charset="utf-8">
+<title>7 bash中的括号</title>
+<link href="https://www.zybuluo.com/static/assets/template-theme-white.css" rel="stylesheet" media="screen">
+<style type="text/css">
+
+#wmd-preview h1  {
+    color: #0077bb; /* 将标题改为蓝色 */
+}
+#wmd-preview h2  {
+    color: #AAAAFF; /* 将标题改为色 */
+}
+#wmd-preview h1  {
+    color: #0077bb; /* 将标题改为蓝色 */
+}
+#wmd-preview h1  {
+    color: #0077bb; /* 将标题改为蓝色 */
+}
+#wmd-preview h3  {
+    color: #0077bb; /* 将标题改为蓝色 */
+}
+#wmd-preview h4  {
+    color: #0077bb; /* 将标题改为light blue */
+}</style>
+</head>
+<body class="theme theme-white">
+<div id="wmd-preview" class="wmd-preview wmd-preview-full-reader"><div class="md-section-divider"></div><div class="md-section-divider"></div><h1 data-anchor-id="6ukq" id="7-bash中的括号">7 bash中的括号</h1><div class="md-section-divider"></div><h2 data-anchor-id="1s37" id="bash"><code>bash</code></h2><div class="md-section-divider"></div><h1 data-anchor-id="aos4" id="title">( )</h1><p data-anchor-id="w31o">( program ) run a program <br>
+( program ) &gt; a.log <br>
+put the program into a.log,if you cat the file, the program will be executed.</p><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="dak9"><ol class="linenums"><li class="L0"><code><span class="kwd">for</span><span class="pln"> i </span><span class="kwd">in</span><span class="pln"> </span><span class="str">`seq 3`</span><span class="pun">;</span><span class="kwd">do</span><span class="pln"> echo hi</span><span class="pun">;</span><span class="pln"> </span><span class="kwd">done</span><span class="pln"> </span><span class="pun">&gt;</span><span class="pln"> b</span><span class="pun">.</span><span class="pln">log</span></code></li><li class="L1"><code><span class="pun">(</span><span class="pln"> </span><span class="kwd">for</span><span class="pln"> i </span><span class="kwd">in</span><span class="pln"> </span><span class="str">`seq 3`</span><span class="pun">;</span><span class="kwd">do</span><span class="pln"> echo hi</span><span class="pun">;</span><span class="pln"> </span><span class="kwd">done</span><span class="pln"> </span><span class="pun">)</span><span class="pln"> </span><span class="pun">&gt;</span><span class="pln"> b</span><span class="pun">.</span><span class="pln">log</span></code></li></ol></pre><p data-anchor-id="oufb">a=( program )</p><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="rrd6"><ol class="linenums"><li class="L0"><code class="language-bash"><span class="pun">(</span><span class="str">`seq 3`</span><span class="pun">)</span><span class="pln"> </span><span class="com"># run `seq 3`,command 1 not found</span></code></li><li class="L1"><code class="language-bash"><span class="pln">a</span><span class="pun">=(</span><span class="pln"> </span><span class="str">`seq 3`</span><span class="pun">)</span><span class="pln"> </span><span class="com">#将seq 3的结果赋给a，a是一个数组</span></code></li><li class="L2"><code class="language-bash"><span class="pln">echo $a</span></code></li></ol></pre><p data-anchor-id="dwnc">(program)</p><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="95ob"><ol class="linenums"><li class="L0"><code><span class="pun">(</span></code></li><li class="L1"><code><span class="pln">echo a</span></code></li><li class="L2"><code><span class="pln">echo b</span></code></li><li class="L3"><code><span class="pln">echo c</span></code></li><li class="L4"><code><span class="pun">)</span></code></li><li class="L5"><code></code></li><li class="L6"><code><span class="com"># == ( echo a; echo b; echo c;)</span></code></li><li class="L7"><code></code></li><li class="L8"><code><span class="pln">a</span><span class="pun">=</span><span class="lit">123</span></code></li><li class="L9"><code><span class="pun">(</span></code></li><li class="L0"><code><span class="pln">echo $a</span></code></li><li class="L1"><code><span class="pln">echo $1</span></code></li><li class="L2"><code><span class="pln">echo $2</span></code></li><li class="L3"><code><span class="pun">)</span></code></li><li class="L4"><code></code></li><li class="L5"><code><span class="com"># == (echo $a; echo $1; echo $2 ;) </span></code></li></ol></pre><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="4vff"><ol class="linenums"><li class="L0"><code><span class="pln">a</span><span class="pun">=</span><span class="str">`seq 10`</span></code></li><li class="L1"><code><span class="pln">a</span><span class="pun">=</span><span class="pln">$</span><span class="pun">(</span><span class="pln">seq </span><span class="lit">10</span><span class="pun">)</span></code></li></ol></pre></div>
+</body>
+</html>

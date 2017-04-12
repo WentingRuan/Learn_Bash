@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html class="theme theme-white">
+<head>
+<meta charset="utf-8">
+<title>8 数组 $:{b=12}</title>
+<link href="https://www.zybuluo.com/static/assets/template-theme-white.css" rel="stylesheet" media="screen">
+<style type="text/css">
+
+#wmd-preview h1  {
+    color: #0077bb; /* 将标题改为蓝色 */
+}
+#wmd-preview h2  {
+    color: #AAAAFF; /* 将标题改为色 */
+}
+#wmd-preview h1  {
+    color: #0077bb; /* 将标题改为蓝色 */
+}
+#wmd-preview h1  {
+    color: #0077bb; /* 将标题改为蓝色 */
+}
+#wmd-preview h3  {
+    color: #0077bb; /* 将标题改为蓝色 */
+}
+#wmd-preview h4  {
+    color: #0077bb; /* 将标题改为light blue */
+}</style>
+</head>
+<body class="theme theme-white">
+<div id="wmd-preview" class="wmd-preview wmd-preview-full-reader"><div class="md-section-divider"></div><div class="md-section-divider"></div><h1 data-anchor-id="yru8" id="8-数组-b12">8 数组 $:{b=12}</h1><p data-anchor-id="tgfp"><code>bash</code></p><hr><div class="md-section-divider"></div><h1 data-anchor-id="un94" id="bash的数组">bash的数组</h1><p data-anchor-id="iwxr">数组要用$来访问</p><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="3sk4"><ol class="linenums"><li class="L0"><code><span class="pln">a</span><span class="pun">=(</span><span class="pln">seq </span><span class="lit">3</span><span class="pun">)</span></code></li><li class="L1"><code><span class="pln">echo $</span><span class="pun">{</span><span class="pln">a</span><span class="pun">[@]}</span><span class="pln"> </span><span class="com">#seq 3</span></code></li></ol></pre><p data-anchor-id="hl0u">区别 </p><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="tiln"><ol class="linenums"><li class="L0"><code class="language-bash"><span class="pln">a</span><span class="pun">=</span><span class="str">`seq 3`</span><span class="pln"> </span><span class="com">#a是一个变量</span></code></li><li class="L1"><code class="language-bash"><span class="pln">echo $a</span></code></li><li class="L2"><code class="language-bash"></code></li><li class="L3"><code class="language-bash"><span class="pln">a</span><span class="pun">=</span><span class="pln">$</span><span class="pun">(</span><span class="pln">seq </span><span class="lit">3</span><span class="pun">)</span></code></li></ol></pre><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="29w0"><ol class="linenums"><li class="L0"><code><span class="pln">a</span><span class="pun">=(</span><span class="pln"> </span><span class="str">`seq 3`</span><span class="pln"> </span><span class="pun">)</span></code></li><li class="L1"><code><span class="pln">echo $</span><span class="pun">{</span><span class="pln">a</span><span class="pun">[</span><span class="lit">0</span><span class="pun">]}</span><span class="pln"> </span><span class="com">#run a and show the first result</span></code></li></ol></pre><div class="md-section-divider"></div><h2 data-anchor-id="khj8" id="a">${a[@]}</h2><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="x5ad"><ol class="linenums"><li class="L0"><code><span class="pln">echo $</span><span class="pun">{</span><span class="pln">a</span><span class="pun">[@]}</span></code></li><li class="L1"><code><span class="pln">echo $</span><span class="pun">{</span><span class="pln">a</span><span class="pun">[</span><span class="lit">8</span></code></li><li class="L2"><code></code></li><li class="L3"><code><span class="pln">echo $</span><span class="pun">{</span><span class="pln">a</span><span class="pun">[</span><span class="lit">1</span><span class="pun">]}</span></code></li><li class="L4"><code><span class="pln">echo $</span><span class="pun">{</span><span class="pln">a</span><span class="pun">[</span><span class="lit">3</span><span class="pun">]}</span></code></li></ol></pre><div class="md-section-divider"></div><h2 data-anchor-id="6bze" id="a-1">${#a[@]}</h2><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="vdry"><ol class="linenums"><li class="L0"><code><span class="pln">echo $</span><span class="pun">{#</span><span class="pln">a</span><span class="pun">[@]}</span><span class="pln"> </span><span class="com">#how many vectors are there in a </span></code></li></ol></pre><div class="md-section-divider"></div><h1 data-anchor-id="rm7f" id="vector-vs-array">Vector vs Array</h1><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="xyuo"><ol class="linenums"><li class="L0"><code><span class="pln">a</span><span class="pun">=</span><span class="str">`seq 10`</span></code></li><li class="L1"><code><span class="pln">echo $a</span></code></li><li class="L2"><code><span class="pln">echo $</span><span class="pun">{</span><span class="pln">a</span><span class="pun">:</span><span class="lit">1</span><span class="pun">:</span><span class="lit">5</span><span class="pun">}</span></code></li><li class="L3"><code></code></li><li class="L4"><code><span class="pln">a</span><span class="pun">=</span><span class="str">"12345678910}</span></code></li><li class="L5"><code><span class="str">echo ${a:0:3}</span></code></li></ol></pre></div>
+</body>
+</html>

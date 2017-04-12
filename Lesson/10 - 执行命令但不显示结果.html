@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html class="theme theme-white">
+<head>
+<meta charset="utf-8">
+<title>10 : 执行命令但不显示结果</title>
+<link href="https://www.zybuluo.com/static/assets/template-theme-white.css" rel="stylesheet" media="screen">
+<style type="text/css">
+
+#wmd-preview h1  {
+    color: #0077bb; /* 将标题改为蓝色 */
+}
+#wmd-preview h2  {
+    color: #AAAAFF; /* 将标题改为色 */
+}
+#wmd-preview h1  {
+    color: #0077bb; /* 将标题改为蓝色 */
+}
+#wmd-preview h1  {
+    color: #0077bb; /* 将标题改为蓝色 */
+}
+#wmd-preview h3  {
+    color: #0077bb; /* 将标题改为蓝色 */
+}
+#wmd-preview h4  {
+    color: #0077bb; /* 将标题改为light blue */
+}</style>
+</head>
+<body class="theme theme-white">
+<div id="wmd-preview" class="wmd-preview wmd-preview-full-reader"><div class="md-section-divider"></div><div class="md-section-divider"></div><h1 data-anchor-id="n06g" id="10-执行命令但不显示结果">10 : 执行命令但不显示结果</h1><p data-anchor-id="wmj6"><code>bash</code></p><hr><div class="md-section-divider"></div><h1 data-anchor-id="lgn2" id="title">:=</h1><p data-anchor-id="hk7u">如果一个向量有值，不执行赋值命令；如果没有值，则赋值，但不返回结果</p><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="klmy"><ol class="linenums"><li class="L0"><code><span class="pln">echo $b</span></code></li><li class="L1"><code><span class="pun">:</span><span class="pln"> $</span><span class="pun">{</span><span class="pln">b</span><span class="pun">:=</span><span class="lit">3</span><span class="pun">}</span></code></li><li class="L2"><code><span class="pln">echo $b</span></code></li><li class="L3"><code></code></li><li class="L4"><code><span class="pun">:</span><span class="pln"> $</span><span class="pun">{</span><span class="pln">b</span><span class="pun">:=</span><span class="lit">123</span><span class="pun">}</span></code></li><li class="L5"><code><span class="pln">echo $b</span></code></li></ol></pre><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="tene"><ol class="linenums"><li class="L0"><code><span class="pln">a</span><span class="pun">=</span><span class="str">"echo hi"</span></code></li><li class="L1"><code><span class="pln">$a </span><span class="com"># $ == excecute</span></code></li><li class="L2"><code><span class="pln">echo $a</span></code></li></ol></pre><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="vfox"><ol class="linenums"><li class="L0"><code><span class="pln">unset b</span></code></li><li class="L1"><code><span class="pln">c</span><span class="pun">=</span><span class="pln">$</span><span class="pun">{</span><span class="pln">b</span><span class="pun">:=</span><span class="lit">123</span><span class="pun">}</span></code></li><li class="L2"><code><span class="pln">$c</span></code></li><li class="L3"><code><span class="pln">echo $c</span></code></li><li class="L4"><code><span class="pln">$b</span></code></li><li class="L5"><code><span class="pln">echo $b</span></code></li></ol></pre><div class="md-section-divider"></div><h1 data-anchor-id="qef9" id="title-1">:-</h1><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="d5yq"><ol class="linenums"><li class="L0"><code><span class="pln">unset $b</span></code></li><li class="L1"><code><span class="pun">:</span><span class="pln"> $</span><span class="pun">{</span><span class="pln">b</span><span class="pun">:-</span><span class="lit">123</span><span class="pun">}</span></code></li><li class="L2"><code><span class="pln">echo $b</span></code></li></ol></pre><div class="md-section-divider"></div><h1 data-anchor-id="i6nm" id="表示执行命令但是不输出结果">：表示执行命令但是不输出结果</h1><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="bv52"><ol class="linenums"><li class="L0"><code><span class="pln">b</span><span class="pun">=</span><span class="lit">123</span></code></li><li class="L1"><code><span class="pun">:</span><span class="pln"> $</span><span class="pun">{</span><span class="pln">b</span><span class="pun">:-</span><span class="lit">789</span><span class="pun">}</span></code></li><li class="L2"><code><span class="pln">echo $b</span></code></li></ol></pre><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="89rz"><ol class="linenums"><li class="L0"><code><span class="pln">work</span><span class="pun">(){</span><span class="pln"> </span><span class="pun">:;</span><span class="pln"> </span><span class="pun">}</span></code></li><li class="L1"><code><span class="pun">:</span><span class="pln"> $</span><span class="pun">{</span><span class="pln">b</span><span class="pun">:=</span><span class="lit">3</span><span class="pun">}</span></code></li><li class="L2"><code><span class="pun">:</span><span class="pln"> </span><span class="lit">789</span></code></li></ol></pre></div>
+</body>
+</html>
